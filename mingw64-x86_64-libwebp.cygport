@@ -1,0 +1,20 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
+NAME="mingw64-x86_64-libwebp"
+VERSION=0.2.0
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="WebP graphics format codec for Win64 toolchain"
+DESCRIPTION="This package does NOT contain cygwin binaries.  Instead, it
+contains msvcrt-linked binaries (aka 'mingw').  It is for use with the
+mingw64-x86_64-gcc cross compiler, and installs into the
+/usr/x86_64-w64-mingw32/sys-root/mingw/{lib,include} directories."
+HOMEPAGE="http://developers.google.com/speed/webp/"
+SRC_URI="http://webp.googlecode.com/files/libwebp-${VERSION}.tar.gz"
+SRC_DIR="libwebp-${VERSION}"
+PATCH_URI="01-no-undefined.patch"
+
+MAKEOPTS+=" bin_PROGRAMS= man_MANS= "
+
+KEEP_LA_FILES="none"

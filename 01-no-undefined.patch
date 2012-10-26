@@ -1,0 +1,27 @@
+--- origsrc/libwebp-0.2.0/src/Makefile.am	2012-08-16 00:49:03.000000000 -0500
++++ src/libwebp-0.2.0/src/Makefile.am	2012-08-21 21:58:45.900496600 -0500
+@@ -1,4 +1,4 @@
+-SUBDIRS = dec enc dsp utils
++SUBDIRS = dec enc dsp utils .
+ if WANT_MUX
+   SUBDIRS += mux
+ endif
+@@ -20,7 +20,7 @@ libwebp_la_LIBADD += dsp/libwebpdsp.la
+ libwebp_la_LIBADD += enc/libwebpencode.la
+ libwebp_la_LIBADD += utils/libwebputils.la
+ 
+-libwebp_la_LDFLAGS = -version-info 4:0:0
++libwebp_la_LDFLAGS = -no-undefined -version-info 4:0:0
+ libwebpincludedir = $(includedir)/webp
+ 
+ pkgconfig_DATA = libwebp.pc
+--- origsrc/libwebp-0.2.0/src/mux/Makefile.am	2012-08-16 00:49:03.000000000 -0500
++++ src/libwebp-0.2.0/src/mux/Makefile.am	2012-08-21 21:58:28.358493200 -0500
+@@ -12,5 +12,6 @@ libwebpmuxinclude_HEADERS =
+ libwebpmuxinclude_HEADERS += ../webp/mux.h
+ libwebpmuxinclude_HEADERS += ../webp/types.h
+ 
+-libwebpmux_la_LDFLAGS = -version-info 0:0:0
++libwebpmux_la_LDFLAGS = -no-undefined -version-info 0:0:0
++libwebpmux_la_LIBADD = ../libwebp.la
+ libwebpmuxincludedir = $(includedir)/webp
