@@ -2,7 +2,7 @@ CROSS_HOST="x86_64-w64-mingw32"
 inherit cross
 
 NAME="mingw64-x86_64-libwebp"
-VERSION=0.3.1
+VERSION=0.4.0
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="WebP graphics format codec for Win64 toolchain"
@@ -14,7 +14,7 @@ HOMEPAGE="http://developers.google.com/speed/webp/"
 SRC_URI="http://webp.googlecode.com/files/libwebp-${VERSION}.tar.gz"
 SRC_DIR="libwebp-${VERSION}"
 
-CYGCONF_ARGS="--enable-libwebpmux --enable-libwebpdemux"
+CYGCONF_ARGS="--enable-libwebpmux --enable-libwebpdemux --enable-libwebpdecoder"
 MAKEOPTS+=" bin_PROGRAMS= man_MANS= "
 
 KEEP_LA_FILES="none"
