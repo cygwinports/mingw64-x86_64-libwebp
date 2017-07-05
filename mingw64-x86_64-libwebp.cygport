@@ -2,7 +2,7 @@ CROSS_HOST="x86_64-w64-mingw32"
 inherit cross
 
 NAME="mingw64-x86_64-libwebp"
-VERSION=0.4.4
+VERSION=0.6.0
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="WebP graphics format codec for Win64 toolchain"
@@ -16,5 +16,3 @@ SRC_DIR="libwebp-${VERSION}"
 
 CYGCONF_ARGS="--enable-libwebpmux --enable-libwebpdemux --enable-libwebpdecoder"
 MAKEOPTS+=" bin_PROGRAMS= man_MANS= "
-
-KEEP_LA_FILES="none"
